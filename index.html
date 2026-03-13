@@ -1,13 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AURA Creator Hub</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA HUB | Mobile Innovation Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Hub Homepage -->
+        <main id="hub-view" class="view active">
+            <div class="bg-grid"></div>
+            <header class="hub-header">
+                <h1 class="hub-title">AURA <span class="glow-text">HUB</span></h1>
+                <p class="hub-subtitle">Mobile Innovation Center</p>
+            </header>
 
+            <div class="hub-grid" id="menu-grid">
+                <!-- Menu items will be injected here -->
+            </div>
+
+            <footer class="hub-footer">
+                <div class="social-links">
+                    <a href="#"><i data-lucide="github"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="mail"></i></a>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Sub Pages Container -->
+        <div id="page-view" class="view">
+            <nav class="mini-nav">
+                <div class="nav-content">
+                    <button class="nav-logo" onclick="navigateTo('hub')">
+                        <div class="logo-icon"><i data-lucide="home"></i></div>
+                        AURA
+                    </button>
+                    <div class="nav-links" id="mini-nav-links">
+                        <!-- Nav links will be injected here -->
+                    </div>
+                </div>
+            </nav>
+
+            <div id="page-content" class="page-container">
+                <!-- Page content will be injected here -->
+            </div>
+
+            <footer class="page-footer">
+                <p>© <span id="year"></span> AURA Creator Hub. Built on Mobile.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
