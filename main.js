@@ -15,9 +15,28 @@ const tools = [
 ];
 
 const projects = [
-    { id: 1, title: "Aura AI", description: "A personal AI assistant built for mobile developers.", image: "https://picsum.photos/seed/aura/600/400", tags: ["React", "AI", "Mobile"] },
-    { id: 2, title: "Promptly", description: "A community-driven prompt sharing platform.", image: "https://picsum.photos/seed/promptly/600/400", tags: ["Next.js", "Community"] },
-    { id: 3, title: "MobileDev Kit", description: "Essential resources for developing on the go.", image: "https://picsum.photos/seed/mobile/600/400", tags: ["Resources", "Mobile"] }
+    { 
+        id: 1, 
+        title: "Aura AI", 
+        description: "A personal AI assistant built for mobile developers.", 
+        image: "https://picsum.photos/seed/aura/600/400", 
+        tags: ["React", "AI", "Mobile"],
+        link: "https://auratheultimateai.vercel.app" // <-- added link
+    },
+    { 
+        id: 2, 
+        title: "Promptly", 
+        description: "A community-driven prompt sharing platform.", 
+        image: "https://picsum.photos/seed/promptly/600/400", 
+        tags: ["Next.js", "Community"]
+    },
+    { 
+        id: 3, 
+        title: "MobileDev Kit", 
+        description: "Essential resources for developing on the go.", 
+        image: "https://picsum.photos/seed/mobile/600/400", 
+        tags: ["Resources", "Mobile"]
+    }
 ];
 
 const prompts = [
@@ -148,7 +167,7 @@ function renderPage(pageId) {
                 <p class="page-subtitle">A showcase of my best work, all developed on mobile.</p>
                 <div class="content-grid">
                     ${projects.map(project => `
-                        <div class="project-card">
+                        <div class="project-card" ${project.link ? `onclick="window.open('${project.link}','_blank')"` : ''}>
                             <div class="project-img-wrapper">
                                 <img src="${project.image}" class="project-img" alt="${project.title}">
                             </div>
@@ -239,4 +258,3 @@ function renderPage(pageId) {
 // Start
 init();
 window.navigateTo = navigateTo;
-
