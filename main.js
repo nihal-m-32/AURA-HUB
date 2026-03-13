@@ -239,3 +239,4 @@ function renderPage(pageId) {
 // Start
 init();
 window.navigateTo = navigateTo;
+
